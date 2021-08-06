@@ -1,0 +1,15 @@
+---
+ - name: "installing git and tree"
+   hosts: all
+   become: true
+   tasks:
+    - name: "git installing"
+      yum:
+       name: git
+       state: true
+       command: systemctl start git
+    - name: "installing tree"
+      yum:
+       name: tree
+       state: present
+...
