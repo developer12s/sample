@@ -3,6 +3,19 @@
    hosts: all
    become: true
    tasks:
+    - name: "terraform commands"
+      displayname: 'terraform init'
+      inputs:
+          script: sh 'terraform init'
+    - name: "terraform commands"
+      displayname: 'terraform format'
+      inputs:
+          script: sh 'terraform fmt'
+    - name: "terraform commands"
+      displayname: 'terraform validate'
+      inputs:
+          script: sh 'terraform validate'
+
     - name: "git installing"
       yum:
        name: git
